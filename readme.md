@@ -7,6 +7,11 @@ Setup script used to deploy Ubuntu server with my preferred settings and package
 The following installs some packages, creates a new user with sudo permissions and creates a pretty message of the day:
 
 ```bash
+# Define variables
+export HOSTNAME=hostname
+export USERNAME=username
+export PASSWORD=password
+
 # Download and run script
 curl -s -L https://raw.githubusercontent.com/jonasmagnusson/ubuntu-server/main/setup.sh | bash
 ```

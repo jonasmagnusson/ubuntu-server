@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# Get parameters
-echo "Enter new username:"
-read USERNAME
+# Show usage information
+usage() { echo -e "Set variables before executing: \n\nexport HOSTNAME=hostname\nexport USERNAME=username\nexport PASSWORD=password\n" 1>&2; exit 1; }
 
-echo "Enter new password:"
-read -s PASSWORD
-
-echo "Enter hostname:"
-read HOSTNAME
+# Check required variables
+if [ -z "${HOSTNAME}" ] || [ -z "${USERNAME}" ] || [ -z "${PASSWORD}" ]; then
+    usage
+fi
 
 # Set hostname
 echo $HOSTNAME > /etc/hostname
