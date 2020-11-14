@@ -156,6 +156,12 @@ for line in "${dfs[@]}"; do
 done
 EOT
 
+# Disable systemd-resolved
+systemctl stop systemd-resolved
+systemctl disable systemd-resolved
+rm /etc/resolv.conf
+echo "nameserver 9.9.9.9" > /etc/resolv.conf
+
 # Update and upgrade
 apt-get -y update
 apt-get -y upgrade
