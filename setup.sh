@@ -58,6 +58,9 @@ curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
 sh /tmp/get-docker.sh
 usermod -aG docker $USERNAME
 
+# Install Docker Compose
+apt install docker-compose
+
 # Install Go Language
 add-apt-repository -y ppa:longsleep/golang-backports
 apt -y update
